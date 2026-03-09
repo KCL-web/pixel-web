@@ -1,0 +1,173 @@
+.footer {
+    background: #0c0c0c;
+    color: #d4d4d4;
+    padding: 48px 20px 24px;
+    font-size: 14px;
+}
+
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+}
+
+.content {
+    display: grid;
+    gap: 32px;
+}
+
+.column {
+    h3 {
+        color: #fff;
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 8px;
+    }
+
+    a {
+        color: #bcbcbc;
+        text-decoration: none;
+        transition: 0.2s;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+.newsletter {
+    h3 {
+        color: white;
+        margin-bottom: 12px;
+    }
+
+    p {
+        margin-bottom: 16px;
+        color: #aaa;
+    }
+}
+
+.form {
+    display: flex;
+    border: 1px solid #2a2a2a;
+
+    input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        background: transparent;
+        color: white;
+    }
+
+    button {
+        background: $color-primary;
+        border: none;
+        padding: 0 16px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: ease-in-out 0.3s;
+
+        &:hover {
+            transition: ease-in-out 0.3s;
+            background-color: $color-inverse;
+        }
+    }
+}
+
+.divider {
+    margin: 40px 0;
+    border-top: 1px solid #2a2a2a;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 40px;
+    font-weight: 700;
+    opacity: 0.08;
+    display: block;
+}
+
+.brand address {
+    font-style: normal;
+    margin-top: 12px;
+    color: #aaa;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    a {
+        color: #ccc;
+        text-decoration: none;
+    }
+}
+
+.social {
+    display: flex;
+    gap: 12px;
+
+    a {
+        border: 1px solid #333;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #fff;
+    }
+}
+
+.legal {
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid #2a2a2a;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.top,
+.cta {
+    text-decoration: none;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .content {
+        grid-template-columns: 1fr 1fr 1.2fr;
+    }
+
+    .bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .legal {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    .footer {
+        padding: 80px 80px 32px;
+    }
+}

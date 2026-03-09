@@ -44,12 +44,11 @@ h3 {
 
 /* Links */
 a {
-    color: $color-primary;
+    color: $color-inverse;
     text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+    &:hover {
+        color: $color-primary;
+    }
 }
 
 /* Buttons default */

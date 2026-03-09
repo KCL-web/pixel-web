@@ -18,20 +18,25 @@ $font-bold: 700;
 
 $color-default: #0f172a;
 $color-muted: #6b7280;
+$color-accent: #a3a3a3;
 $color-inverse: #ffffff;
-$color-success: #064e3b;
-$color-warning: #e4881f;
-$color-danger: #7f1d1d;
+$color-background: #ffffff;
+$color-bg-glass: #ffffffb9;
+$color-success: #059705;
+$color-warning: #ffd000;
+$color-danger: #ca0303;
 
-$color-primary: #2563eb;
-$color-primary-600: #1e40af;
-$color-secondary: #06b6d4;
+$color-primary: #fa6918;
+$color-secondary: #fe8022;
+$color-tertiary: #feb625;
 
 $radius-xs: 2px;
 $radius-sm: 4px;
 $radius-md: 8px;
 $radius-lg: 12px;
 $radius-pill: 9999px;
+
+$container-width: 1200px;
 
 @mixin font($size, $weight: $font-weight-regular, $family: $font-family) {
     font-family: $family;

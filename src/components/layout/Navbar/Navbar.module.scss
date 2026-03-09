@@ -1,0 +1,169 @@
+.header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 50;
+
+    backdrop-filter: blur(12px);
+    background: $color-bg-glass;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.container {
+    position: relative;
+
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+}
+
+.leftNav {
+    display: none;
+    gap: 2rem;
+}
+
+.navLink {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: $color-muted;
+    transition: color 0.2s ease;
+}
+
+.navLink:hover {
+    color: $color-secondary;
+}
+
+.active {
+    color: $color-secondary;
+}
+
+.right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.desktopCta {
+    display: none;
+}
+
+.mobileCta {
+    width: 100%;
+}
+
+.mobileToggle {
+    position: absolute;
+    right: 1rem;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobileMenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    height: 100vh;
+    width: 85%;
+    max-width: 340px;
+
+    background: $color-background;
+
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.open {
+    transform: translateX(0);
+}
+
+.mobileHeader {
+    height: 64px;
+
+    padding: 0 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobileClose {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mobileNav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    padding: 2rem 1.5rem;
+}
+
+.mobileLink {
+    font-size: 1rem;
+    text-decoration: none;
+    color: $color-muted;
+}
+
+@media (min-width: 900px) {
+    .container {
+        height: 80px;
+
+        position: static;
+
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+    }
+
+    .logo {
+        position: static;
+        transform: none;
+        justify-self: center;
+    }
+
+    .leftNav {
+        display: flex;
+    }
+
+    .desktopCta {
+        display: block;
+    }
+
+    .mobileToggle {
+        display: none;
+    }
+
+    .mobileMenu {
+        display: none;
+    }
+}
