@@ -115,13 +115,20 @@
 }
 
 .dot {
-    width: 10px;
-    height: 10px;
+    width: 16px;
+    height: 16px;
+    min-width: 44px;
+    min-height: 44px;
     border-radius: 50%;
     background: white;
     opacity: 0.4;
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    /* Remove outline só se for customizado por acessibilidade */
 }
 
 .activeDot {
