@@ -97,7 +97,7 @@ const Navbar = () => {
                         </a>
                     ))}
 
-                    <Link to="/contato" onClick={closeMenu}>
+                    <Link to="/#contato" onClick={closeMenu}>
                         <Button className={styles.mobileCta}>
                             Falar com especialista
                         </Button>
