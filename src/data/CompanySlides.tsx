@@ -1,18 +1,18 @@
 import type { SlideItem } from '@/components/ui/Slider/Slider';
-import ambev from '@assets/logos/ambev.png';
-import assai from '@assets/logos/assai.png';
-import cencosud from '@assets/logos/cencosud.png';
-import eastman from '@assets/logos/eastman.png';
-import eletrosom from '@assets/logos/eletrosom.png';
-import IFF from '@assets/logos/IFF.png';
-import kodak from '@assets/logos/kodak.png';
-import mcdonalds from '@assets/logos/mcdonalds.png';
-import philips from '@assets/logos/philips.png';
-import RCHLO from '@assets/logos/RCHLO.png';
-import redbull from '@assets/logos/redbull.png';
-import SIEMENS from '@assets/logos/SIEMENS.png';
-import sunChemical from '@assets/logos/sun-chemical.png';
-import VirtualVisions from '@assets/logos/virtual-visions.png';
+import ambev from '@assets/logos/ambev.webp';
+import assai from '@assets/logos/assai.webp';
+import cencosud from '@assets/logos/cencosud.webp';
+import eastman from '@assets/logos/eastman.webp';
+import eletrosom from '@assets/logos/eletrosom.webp';
+import IFF from '@assets/logos/IFF.webp';
+import kodak from '@assets/logos/kodak.webp';
+import mcdonalds from '@assets/logos/mcdonalds.webp';
+import philips from '@assets/logos/philips.webp';
+import RCHLO from '@assets/logos/RCHLO.webp';
+import redbull from '@assets/logos/redbull.webp';
+import SIEMENS from '@assets/logos/SIEMENS.webp';
+import sunChemical from '@assets/logos/sun-chemical.webp';
+import VirtualVisions from '@assets/logos/virtual-visions.webp';
 
 export const companySlides: SlideItem[] = [
     { image: ambev, alt: 'Ambev' },

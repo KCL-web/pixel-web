@@ -39,16 +39,21 @@
 .navLink {
     font-size: 0.9rem;
     text-decoration: none;
-    color: $color-muted;
+    color: #222831; // darker for better contrast
+    font-weight: 500;
+    letter-spacing: 0.01em;
     transition: color 0.2s ease;
 }
 
 .navLink:hover {
     color: $color-secondary;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .active {
     color: $color-secondary;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
 }
 
 .right {
