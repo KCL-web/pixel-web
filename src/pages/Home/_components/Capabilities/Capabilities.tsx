@@ -94,7 +94,7 @@ export default function Capabilities() {
                             <li
                                 key={idx}
                                 className={styles.card}
-                                role="article"
+                                role="listitem"
                             >
                                 <div className={styles.icon} aria-hidden>
                                     <Icon size={28} color={cap.color} />

@@ -46,8 +46,9 @@
     align-items: center;
 }
 .button {
-    background: #f97316;
+    background: $color-secondary;
     color: white;
+    font-weight: $font-semibold;
     border: none;
     padding: 10px 14px;
     border-radius: 8px;
