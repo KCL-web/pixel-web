@@ -1,6 +1,15 @@
 import { ChevronRight, Facebook, Instagram, Linkedin } from 'lucide-react';
 import styles from './Footer.module.scss';
-import Logo from '@/components/Logo/Logo';
+import Logo from '@/components/ui/Logo/Logo';
+
+const services = [
+    { text: 'Desenvolvimento de Sistemas' },
+    { text: 'Desenvolvimento de Websites' },
+    { text: 'Desenvolvimento de Aplicativos' },
+    { text: 'Design UI/UX' },
+    { text: 'Infraestrutura e Cloud' },
+    { text: 'Auditoria e Otimização de Websites' },
+];
 
 export default function Footer() {
     return (
@@ -10,24 +19,11 @@ export default function Footer() {
                     <nav className={styles.column} aria-label="Serviços">
                         <h3>Serviços</h3>
                         <ul>
-                            <li>
-                                <a href="/implantacao-vtex-io">
-                                    Desenvolvimento de aplicativos
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/implementacao-shopify">
-                                    Análise e Desenvolvimento de websites
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/suporte-evolucao">
-                                    Suporte & Evolução
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/app-commerce">App Commerce</a>
-                            </li>
+                            {services.map((item) => (
+                                <li key={item.text}>
+                                    <a href="/#servicos">{item.text}</a>
+                                </li>
+                            ))}
                         </ul>
                     </nav>
 
@@ -35,13 +31,16 @@ export default function Footer() {
                         <h3>PixelWeb</h3>
                         <ul>
                             <li>
-                                <a href="/sobre">Sobre nós</a>
+                                <a href="#sobre">Sobre nós</a>
                             </li>
                             <li>
-                                <a href="/contato">Contato</a>
+                                <a href="/#clientes">Nossos clientes</a>
                             </li>
                             <li>
-                                <a href="/trabalhe-conosco">Nossos clientes</a>
+                                <a href="/#servicos">Serviços</a>
+                            </li>
+                            <li>
+                                <a href="/#contato">Contato</a>
                             </li>
                         </ul>
                     </nav>

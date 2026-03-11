@@ -1,0 +1,50 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input {
+    width: 100%;
+    padding: 1rem;
+
+    border-radius: 0.5rem;
+    border: 1px solid $color-secondary;
+    background: $color-background;
+
+    font-size: 0.9rem;
+    color: $color-default;
+
+    transition: all 0.2s ease;
+
+    &::placeholder {
+        color: $color-muted;
+    }
+
+    &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 2px $color-tertiary;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.errorInput {
+    border-color: #ef4444;
+}
+
+.error {
+    font-size: $font-md;
+    color: #ef4444;
+    min-height: 1.4em;
+    max-height: 1.4em;
+}
+
+@media (min-width: 768px) {
+    .input {
+        font-size: 0.875rem;
+    }
+}

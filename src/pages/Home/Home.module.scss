@@ -1,95 +1,129 @@
 @use '@/styles/variables' as *;
 
 .container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
-.hero {
-  text-align: center;
-  padding: 3rem 1rem;
+.heroSection {
+    text-align: center;
+    padding: 6rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1000px;
+    max-height: 800px;
+    margin: 0 auto;
+    height: min(78vh, 720px);
+    overflow: hidden;
 
-  h1 {
-    font-size: $font-2xl;
-    margin-bottom: 1rem;
-    color: $color-default;
-  }
+    .title {
+        font-size: $font-2xl;
+        margin-bottom: 1rem;
+        color: $color-default;
 
-  p {
-    font-size: $font-lg;
-    color: $color-muted;
-    margin: 0;
-  }
+        span {
+            color: $color-inverse;
+            background: linear-gradient(90deg, $color-primary, $color-tertiary);
+        }
+    }
+
+    .description {
+        font-size: $font-lg;
+        color: $color-muted;
+        margin: 0;
+    }
 }
 
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem 0;
+.about {
+    max-width: $container-width;
+    margin: 4rem auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    padding: 4rem 2rem;
+    border-top: 10px solid transparent;
+    border-radius: $radius-lg;
+    background:
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(90deg, $color-primary, $color-tertiary) border-box;
+
+    p {
+        color: $color-muted;
+        font-size: $font-2xl;
+        font-weight: $font-medium;
+
+        span {
+            color: $color-default;
+        }
+    }
 }
 
-.feature {
-  padding: 2rem;
-  border-radius: $radius-md;
-  background: #f5f5f5;
-  transition: all 300ms ease;
+.companies {
+    max-width: $container-width;
+    margin: 0 auto;
 
-  &:hover {
-    background: #efefef;
-    transform: translateY(-4px);
-  }
+    .title {
+        color: $color-default;
+        font-size: $font-2xl;
+        font-weight: $font-bold;
+        text-align: start;
+        color: $color-muted;
+        padding: 0.5rem;
+        max-width: 600px;
 
-  h2 {
-    font-size: $font-xl;
-    margin-bottom: 1rem;
-    color: $color-primary;
-  }
+        strong {
+            background: linear-gradient(
+                    -180deg,
+                    $color-secondary,
+                    $color-tertiary
+                )
+                bottom / 100% 3px no-repeat;
+        }
 
-  p {
-    color: $color-muted;
-    margin: 0;
-    line-height: 1.6;
-  }
+        span {
+            color: $color-primary;
+        }
+    }
 }
 
-.cta {
-  text-align: center;
-  padding: 3rem 1rem;
-  border-radius: $radius-md;
-  background: linear-gradient(135deg, $color-primary, $color-secondary);
-  color: $color-inverse;
+.stacks {
+    max-width: $container-width;
+    margin: 3rem auto;
+    text-align: center;
 
-  h2 {
-    font-size: $font-xl;
-    margin-bottom: 1rem;
-    color: $color-inverse;
-  }
+    h2 {
+        color: rgb(43, 43, 43);
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 2rem 0;
+        font-size: $font-2xl;
 
-  p {
-    font-size: $font-md;
-    margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.9);
-  }
+        span {
+            color: $color-primary;
+        }
+    }
 }
 
-.button {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  background: $color-inverse;
-  color: $color-primary;
-  border-radius: $radius-md;
-  font-weight: $font-semibold;
-  text-decoration: none;
-  transition: all 300ms ease;
+@media (min-width: 768px) {
+    .heroSection {
+        .title {
+            font-size: $font-3xl;
+        }
+    }
+}
 
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
+@media (min-width: 1024px) {
+    .heroSection {
+        .title {
+            font-size: $font-4xl;
+        }
+
+        .description {
+            font-size: $font-xl;
+        }
+    }
 }

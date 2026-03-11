@@ -1,0 +1,36 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 1.25rem 1.75rem;
+
+    border-radius: $radius-md;
+    border: 1px solid $color-secondary;
+    background: $color-background;
+
+    resize: vertical;
+
+    @include font($body-size, $font-regular);
+    color: $color-default;
+
+    transition: all 0.2s ease;
+
+    &::placeholder {
+        color: $color-muted;
+    }
+
+    &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 2px $color-tertiary;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}

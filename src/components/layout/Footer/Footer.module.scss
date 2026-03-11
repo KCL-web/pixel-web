@@ -1,5 +1,5 @@
 .footer {
-    background: #0c0c0c;
+    background: #202020;
     color: #d4d4d4;
     padding: 48px 20px 24px;
     font-size: 14px;
@@ -121,7 +121,6 @@
     gap: 12px;
 
     a {
-        border: 1px solid #333;
         width: 32px;
         height: 32px;
         display: flex;
@@ -129,6 +128,10 @@
         justify-content: center;
         text-decoration: none;
         color: #fff;
+
+        &:hover {
+            color: $color-primary;
+        }
     }
 }
 

@@ -3,15 +3,15 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { Menu, X } from 'lucide-react';
 import { Button } from '@components/ui/Button/Button';
-import Logo from '@components/Logo/Logo';
+import Logo from '@/components/ui/Logo/Logo';
 
 import styles from './Navbar.module.scss';
 
 const navLinks = [
     { label: 'Início', href: '/' },
-    { label: 'Sobre nós', href: '/sobre' },
-    { label: 'Serviços', href: '/servicos' },
-    { label: 'Contato', href: '/contato' },
+    { label: 'Sobre nós', href: '/#sobre' },
+    { label: 'Serviços', href: '#servicos' },
+    { label: 'Contato', href: '/#contato' },
 ];
 
 const Navbar = () => {
@@ -30,15 +30,15 @@ const Navbar = () => {
                     aria-label="Navegação principal"
                 >
                     {navLinks.map((link) => (
-                        <Link
+                        <a
                             key={link.href}
-                            to={link.href}
+                            href={link.href}
                             className={`${styles.navLink} ${
                                 isActive(link.href) ? styles.active : ''
                             }`}
                         >
                             {link.label}
-                        </Link>
+                        </a>
                     ))}
                 </nav>
 
@@ -85,16 +85,16 @@ const Navbar = () => {
 
                 <nav className={styles.mobileNav} aria-label="Menu mobile">
                     {navLinks.map((link) => (
-                        <Link
+                        <a
                             key={link.href}
-                            to={link.href}
+                            href={link.href}
                             onClick={closeMenu}
                             className={`${styles.mobileLink} ${
                                 isActive(link.href) ? styles.active : ''
                             }`}
                         >
                             {link.label}
-                        </Link>
+                        </a>
                     ))}
 
                     <Link to="/contato" onClick={closeMenu}>
