@@ -1,6 +1,10 @@
 import { ChevronRight, Facebook, Instagram, Linkedin } from 'lucide-react';
 import styles from './Footer.module.scss';
 import Logo from '@/components/ui/Logo/Logo';
+import emailSchema from '@/schema/newsletter.schema';
+import { subscribeNewsletter } from '@/services/newsletterService';
+import { useState } from 'react';
+import { Button } from '@/components/ui/Button/Button';
 
 const services = [
     { text: 'Desenvolvimento de Sistemas' },
@@ -11,7 +15,43 @@ const services = [
     { text: 'Auditoria e Otimização de Websites' },
 ];
 
+type FormStatus = 'idle' | 'loading' | 'success' | 'error';
+
 export default function Footer() {
+    const [email, setEmail] = useState('');
+    const [status, setStatus] = useState<FormStatus>('idle');
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        const result = emailSchema.safeParse({ email });
+
+        if (!result.success) {
+            console.log(result.error.issues[0].message);
+            return;
+        }
+
+        setStatus('loading');
+
+        try {
+            await subscribeNewsletter({ email });
+
+            setEmail('');
+            setStatus('success');
+        } catch (error) {
+            console.error(error);
+            setStatus('error');
+        }
+    };
+
+    const handleChange = (value: string) => {
+        setEmail(value);
+
+        if (status !== 'idle') {
+            setStatus('idle');
+        }
+    };
+
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
@@ -52,18 +92,39 @@ export default function Footer() {
                             atualizações exclusivas.
                         </p>
 
-                        <form className={styles.form}>
+                        <form
+                            className={styles.form}
+                            onSubmit={handleSubmit}
+                            aria-label="inscrição na newsletter"
+                        >
                             <input
+                                id="newsletter-email"
                                 type="email"
                                 name="email"
+                                autoComplete="email"
                                 placeholder="Endereço de e-mail"
+                                value={email}
+                                onChange={(e) => handleChange(e.target.value)}
                                 required
-                                aria-label="Digite seu e-mail"
                             />
-                            <button type="submit" aria-label="Enviar email">
+                            <Button
+                                type="submit"
+                                disabled={status === 'loading'}
+                                aria-busy={status === 'loading'}
+                                aria-label="Enviar email"
+                            >
                                 <ChevronRight />
-                            </button>
+                            </Button>
                         </form>
+                        <p className={styles.success}>
+                            {status === 'success'
+                                ? 'Email cadastrado com sucesso!'
+                                : ''}
+                        </p>
+                        <p className={styles.privacy}>
+                            Seus dados não serão compartilhados e você pode
+                            cancelar a inscrição a qualquer momento.
+                        </p>
                     </section>
                 </div>
 
