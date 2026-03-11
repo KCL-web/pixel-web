@@ -80,7 +80,12 @@ export default function Slider({
     const renderSlide = (i: SlideItem, idx: number) => (
         <div className={styles.slide} key={idx}>
             {i.image ? (
-                <img src={i.image} alt={i.alt ?? 'Cliente'} />
+                <img
+                    height={160}
+                    width={160}
+                    src={i.image}
+                    alt={i.alt ?? 'Cliente'}
+                />
             ) : i.text ? (
                 <span className={styles.slideText}>{i.text}</span>
             ) : null}

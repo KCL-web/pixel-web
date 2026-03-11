@@ -60,6 +60,8 @@ export default function HeroSlider({
                         <div className={styles.overlay} />
 
                         <img
+                            height={1300}
+                            width={1600}
                             src={slide.image}
                             alt={slide.title}
                             className={styles.background}

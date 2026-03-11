@@ -31,8 +31,10 @@ const Logo = ({
     return (
         <div className={classes}>
             <img
+                width={160}
+                height={160}
                 src={src}
-                alt="Virtual Visions"
+                alt="PixelWeb Logo"
                 loading="eager"
                 decoding="async"
             />
