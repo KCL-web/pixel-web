@@ -30,7 +30,7 @@ const ContactForm = () => {
         name: '',
         email: '',
         phone: '',
-        details: '',
+        message: '',
     });
 
     const [errors, setErrors] = useState<ErrorsType>({});
@@ -73,7 +73,7 @@ const ContactForm = () => {
                 name: '',
                 email: '',
                 phone: '',
-                details: '',
+                message: '',
             });
 
             setSuccess(true);
@@ -148,11 +148,11 @@ const ContactForm = () => {
 
                         <Textarea
                             label="Detalhes adicionais"
-                            id="details"
+                            id="message"
                             placeholder="Descreva suas necessidades..."
-                            value={form.details}
+                            value={form.message}
                             onChange={(e) =>
-                                handleChange('details', e.target.value)
+                                handleChange('message', e.target.value)
                             }
                         />
 
