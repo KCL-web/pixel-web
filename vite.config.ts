@@ -9,7 +9,9 @@ export default defineConfig({
         preprocessorOptions: {
             scss: {
                 loadPaths: [path.resolve(__dirname, 'src/styles')],
-                additionalData: `@use "variables.scss" as *;`,
+                additionalData: `@use "variables.scss" as *; \n@use "sass:color";
+
+                `,
             },
         },
     },

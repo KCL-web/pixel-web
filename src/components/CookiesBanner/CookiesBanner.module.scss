@@ -46,13 +46,17 @@
     align-items: center;
 }
 .button {
-    background: $color-secondary;
-    color: white;
+    background: #1a1a1a; // cor de fundo escura para alto contraste
+    color: #fff; // texto branco
     font-weight: $font-semibold;
-    border: none;
+    border: 2px solid $color-secondary;
     padding: 10px 14px;
     border-radius: 8px;
     cursor: pointer;
+    transition:
+        background 0.2s,
+        color 0.2s,
+        border 0.2s;
 }
 .modalOverlay {
     position: fixed;
@@ -110,7 +114,9 @@
     border-radius: 6px;
 }
 .button:hover {
-    opacity: 0.95;
+    background: $color-secondary;
+    color: #1a1a1a;
+    border-color: #1a1a1a;
 }
 
 .cookieCategory {
