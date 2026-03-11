@@ -5,34 +5,18 @@ import ContactForm from '@/components/ui/ContactForm/ContactForm';
 import Capabilities from '@/pages/Home/_components/Capabilities/Capabilities';
 import { companySlides } from '@/data/CompanySlides';
 import { techSlides } from '@/data/TechSlide';
-import { Button } from '@/components/ui/Button/Button';
-import { ChevronRight } from 'lucide-react';
 import InnovationSection from './_components/InnovationSection/InnovationSection';
+import HeroSlider from '@/components/HeroSlider/HeroSlider';
 
 export default function Home() {
     return (
         <AppLayout>
             <div className={styles.container}>
-                <section className={styles.heroSection}>
-                    <div>
-                        <h1 className={styles.title}>
-                            Transformamos ideias em {''}
-                            <span>experiências digitais</span> incríveis
-                        </h1>
-                        <p className={styles.description}>
-                            Desenvolvemos websites, plataformas e aplicações
-                            modernas com foco em performance, design e
-                            experiência do usuário.
-                        </p>
-                    </div>
-                    <a href="/#contato">
-                        <Button>
-                            Começar um projeto <ChevronRight />
-                        </Button>
-                    </a>
-                </section>
+                <div>
+                    <HeroSlider />
 
-                <InnovationSection />
+                    <InnovationSection />
+                </div>
 
                 <section className={styles.companies}>
                     <h2 className={styles.title}>
