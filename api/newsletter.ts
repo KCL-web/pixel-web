@@ -6,6 +6,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
+    const start = Date.now();
     try {
         if (
             !process.env.SMTP_HOST ||
@@ -35,24 +36,37 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             },
         });
 
-        await transporter.sendMail({
-            from: `Newsletter <${process.env.SMTP_USER}>`,
-            to: process.env.NEWSLETTER_EMAIL,
-            subject: 'Novo inscrito na newsletter',
-            html: `
-                <h2>Novo inscrito</h2>
-                <p><strong>Email:</strong> ${email}</p>
-            `,
-        });
+        try {
+            await transporter.sendMail({
+                from: `Newsletter <${process.env.SMTP_USER}>`,
+                to: process.env.NEWSLETTER_EMAIL,
+                subject: 'Novo inscrito na newsletter',
+                html: `
+                    <h2>Novo inscrito</h2>
+                    <p><strong>Email:</strong> ${email}</p>
+                `,
+            });
+        } catch (mailError) {
+            console.error('Erro ao enviar email da newsletter:', mailError);
+            return res.status(500).json({
+                error: 'Erro ao enviar email da newsletter',
+                details:
+                    mailError instanceof Error ? mailError.message : mailError,
+            });
+        }
 
+        const elapsed = Date.now() - start;
         return res.status(200).json({
             success: true,
+            elapsedMs: elapsed,
         });
     } catch (error) {
+        const elapsed = Date.now() - start;
         console.error('Newsletter API error:', error);
-
         return res.status(500).json({
             error: 'Erro ao registrar newsletter',
+            details: error instanceof Error ? error.message : error,
+            elapsedMs: elapsed,
         });
     }
 }
