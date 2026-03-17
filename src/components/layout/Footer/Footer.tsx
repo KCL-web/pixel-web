@@ -171,10 +171,10 @@ export default function Footer() {
                         © PixelWeb {new Date().getFullYear()} – Todos os
                         direitos reservados.
                     </p>
-
                     <a href="#top" className={styles.top}>
                         Voltar ao topo ↑
                     </a>
+                    <span>CNPJ: 15.272.526/0001-06</span>
                 </div>
             </div>
         </footer>
