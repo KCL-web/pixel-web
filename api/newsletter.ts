@@ -51,8 +51,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     } catch (error) {
         console.error('Newsletter API error:', error);
 
+        const message = error instanceof Error ? error.message : String(error);
+
         return res.status(500).json({
             error: 'Erro ao registrar newsletter',
+            detail: message,
         });
     }
 }
