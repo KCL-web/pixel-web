@@ -3,7 +3,7 @@ import styles from './Footer.module.scss';
 import Logo from '@/components/ui/Logo/Logo';
 import emailSchema from '@/schema/newsletter.schema';
 import { subscribeNewsletter } from '@/services/newsletterService';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/Button/Button';
 
 const services = [
@@ -51,6 +51,16 @@ export default function Footer() {
             setStatus('idle');
         }
     };
+
+    useEffect(() => {
+        if (status === 'success') {
+            const timer = setTimeout(() => {
+                setStatus('idle');
+            }, 5000);
+
+            return () => clearTimeout(timer);
+        }
+    }, [status]);
 
     return (
         <footer className={styles.footer}>
